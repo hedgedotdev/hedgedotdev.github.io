@@ -199,16 +199,18 @@
 
   .hero-logo {
     margin-bottom: 3rem;
-    text-align: center;
+    text-align: left;
+    width: 100%;
   }
 
   .main-logo {
     max-width: 400px;
-    width: 100%;
+    width: auto;
     height: auto;
     border-radius: 16px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    display: block;
   }
 
   .main-logo:hover {
