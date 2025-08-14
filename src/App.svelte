@@ -19,20 +19,9 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <div class="hero-logo">
-        <img src="/hedge-dev-logo.png" alt="hedge.dev" class="main-logo" />
-      </div>
-      <div class="hero-content">
-        <div class="hero-text">
-          <h1>Professional Consulting & Custom Development</h1>
-          <p class="lead">Transform your ideas into powerful solutions with expert consulting and custom development services tailored to your business needs.</p>
-          <div class="cta-buttons">
-            <a href="#contact" class="btn-primary">
-              Get Started
-              <ArrowRight size={20} />
-            </a>
-            <a href="#services" class="btn-secondary">Learn More</a>
-          </div>
+      <div class="hero-top">
+        <div class="hero-logo">
+          <img src="/hedge-dev-logo.png" alt="hedge.dev" class="main-logo" />
         </div>
         <div class="hero-graphic">
           <div class="graphic-container">
@@ -51,6 +40,19 @@
                 <Zap size={50} />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Professional Consulting & Custom Development</h1>
+          <p class="lead">Transform your ideas into powerful solutions with expert consulting and custom development services tailored to your business needs.</p>
+          <div class="cta-buttons">
+            <a href="#contact" class="btn-primary">
+              Get Started
+              <ArrowRight size={20} />
+            </a>
+            <a href="#services" class="btn-secondary">Learn More</a>
           </div>
         </div>
       </div>
@@ -197,14 +199,20 @@
     padding-top: 80px;
   }
 
-  .hero-logo {
+  .hero-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 3rem;
-    text-align: left;
-    width: 100%;
+    gap: 4rem;
+  }
+
+  .hero-logo {
+    flex: 0 0 auto;
   }
 
   .main-logo {
-    max-width: 400px;
+    max-width: 350px;
     width: auto;
     height: auto;
     border-radius: 16px;
@@ -230,12 +238,9 @@
   }
 
   .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
     position: relative;
     z-index: 1;
+    text-align: left;
   }
 
   .hero-text h1 {
@@ -303,8 +308,8 @@
 
   .graphic-container {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
 
   .central-graphic {
@@ -516,17 +521,16 @@
       padding-top: 70px;
     }
 
-    .main-logo {
-      max-width: 300px;
+    .hero-top {
+      flex-direction: column;
+      gap: 2rem;
     }
 
-    .hero-logo {
-      margin-bottom: 2rem;
+    .main-logo {
+      max-width: 250px;
     }
 
     .hero-content {
-      grid-template-columns: 1fr;
-      gap: 3rem;
       text-align: center;
     }
 
@@ -535,8 +539,8 @@
     }
 
     .graphic-container {
-      width: 300px;
-      height: 300px;
+      width: 250px;
+      height: 250px;
     }
 
     .services-grid {
