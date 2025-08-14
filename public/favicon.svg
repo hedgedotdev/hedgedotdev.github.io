@@ -1,5 +1,5 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect width="32" height="32" rx="6" fill="#1a1a1a"/>
-  <text x="16" y="12" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="6" font-weight="bold">hedge</text>
-  <text x="16" y="22" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="6" font-weight="bold">.dev</text>
+  <text x="16" y="13" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="7" font-weight="600">h</text>
+  <text x="16" y="24" text-anchor="middle" fill="#a1a1aa" font-family="system-ui, -apple-system, sans-serif" font-size="5" font-weight="400">.dev</text>
 </svg>

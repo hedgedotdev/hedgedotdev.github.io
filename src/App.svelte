@@ -202,13 +202,20 @@
   .hero-top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 3rem;
-    gap: 4rem;
+    gap: 2rem;
   }
 
   .hero-logo {
     flex: 0 0 auto;
+  }
+
+  .hero-graphic {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
   }
 
   .main-logo {
@@ -300,16 +307,10 @@
   }
 
   /* Hero Graphic */
-  .hero-graphic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .graphic-container {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
   }
 
   .central-graphic {
