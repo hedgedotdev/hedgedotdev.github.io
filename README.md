@@ -4,7 +4,9 @@ A professional consulting and custom development website built with Svelte and d
 
 ## 🌐 Live Site
 
-**https://hedgedotdev.github.io/**
+**https://hedge.dev** (Primary)  
+**https://www.hedge.dev** (WWW redirect)  
+**https://hedgedotdev.github.io** (Fallback)
 
 ## 🏗️ Architecture & Technology Stack
 
@@ -150,15 +152,104 @@ npm run dev
 - **Custom Domain** - Ready for hedge.dev configuration
 - **HTTPS** - Enforced secure connections
 
-### DNS Configuration (for custom domain)
-```
-# Add these DNS records for hedge.dev:
-CNAME   www    hedgedotdev.github.io
-A       @      185.199.108.153
-A       @      185.199.109.153
-A       @      185.199.110.153
-A       @      185.199.111.153
-```
+### Custom Domain Configuration
+
+The site uses **hedge.dev** as the primary domain with GitHub Pages hosting.
+
+#### GoDaddy DNS Configuration
+
+**Important**: Complete these steps in order at [GoDaddy DNS Management](https://dcc.godaddy.com/):
+
+1. **Delete Existing Records** (if any)
+   - Remove any existing A, AAAA, or CNAME records for @ and www
+   - Keep only essential records (like MX for email if needed)
+
+2. **Add Apex Domain A Records**
+   ```
+   Type: A
+   Name: @ (or leave blank)
+   Value: 185.199.108.153
+   TTL: 1 Hour (3600)
+   
+   Type: A
+   Name: @ (or leave blank) 
+   Value: 185.199.109.153
+   TTL: 1 Hour (3600)
+   
+   Type: A
+   Name: @ (or leave blank)
+   Value: 185.199.110.153
+   TTL: 1 Hour (3600)
+   
+   Type: A
+   Name: @ (or leave blank)
+   Value: 185.199.111.153
+   TTL: 1 Hour (3600)
+   ```
+
+3. **Add WWW Subdomain CNAME Record**
+   ```
+   Type: CNAME
+   Name: www
+   Value: hedgedotdev.github.io
+   TTL: 1 Hour (3600)
+   ```
+
+4. **Verification Steps**
+   - Wait 5-10 minutes for DNS propagation
+   - Check DNS with: `dig hedge.dev` and `dig www.hedge.dev`
+   - Verify in GitHub repo settings under Pages > Custom domain
+
+#### GitHub Pages Configuration
+
+1. **Repository Settings**
+   - Go to repository Settings > Pages
+   - Source: Deploy from a branch (main)
+   - Custom domain: `hedge.dev`
+   - Enforce HTTPS: ✅ Enabled
+
+2. **CNAME File**
+   - File `public/CNAME` contains: `hedge.dev`
+   - This tells GitHub Pages which domain to serve
+
+3. **DNS Propagation Timeline**
+   - Initial setup: 15-30 minutes
+   - Full global propagation: 24-48 hours
+   - SSL certificate generation: 10-60 minutes after DNS resolves
+
+#### Repository Privacy Settings
+
+**Public Repository**: ✅ Free GitHub Pages hosting  
+**Private Repository**: Requires GitHub Pro ($4/month) or higher
+
+You can make the repository private if you have:
+- GitHub Pro (Personal account)
+- GitHub Team (Organization)
+- GitHub Enterprise
+
+### Domain Troubleshooting
+
+**Common Issues:**
+
+1. **"Domain not configured" error**
+   - Ensure CNAME file exists in repository root
+   - Check GitHub Pages settings show correct domain
+   - Verify DNS records are correct
+
+2. **SSL Certificate issues**
+   - Wait up to 24 hours for GitHub to issue certificate
+   - Ensure DNS is fully propagated first
+   - Try unchecking/rechecking "Enforce HTTPS"
+
+3. **Site not loading**
+   - Check DNS: `nslookup hedge.dev`
+   - Verify A records point to GitHub's IPs
+   - Clear browser cache and try incognito mode
+
+4. **Mixed content warnings**
+   - Ensure all assets use relative paths
+   - Check Vite base configuration is `/`
+   - Verify no hardcoded HTTP links
 
 ## 🔧 Troubleshooting
 
