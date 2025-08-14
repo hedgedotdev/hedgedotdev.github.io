@@ -6,9 +6,6 @@
   <nav class="navbar">
     <div class="container">
       <div class="nav-content">
-        <div class="logo">
-          <img src="/hedge-dev-logo.png" alt="hedge.dev" class="logo-img" />
-        </div>
         <div class="nav-links">
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
@@ -22,6 +19,9 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
+      <div class="hero-logo">
+        <img src="/hedge-dev-logo.png" alt="hedge.dev" class="main-logo" />
+      </div>
       <div class="hero-content">
         <div class="hero-text">
           <h1>Professional Consulting & Custom Development</h1>
@@ -147,25 +147,9 @@
 
   .nav-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 0;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo-img {
-    height: 40px;
-    width: auto;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-  }
-
-  .logo-img:hover {
-    transform: scale(1.05);
   }
 
   .nav-links {
@@ -204,11 +188,32 @@
   .hero {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
     padding-top: 80px;
+  }
+
+  .hero-logo {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .main-logo {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .main-logo:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(79, 70, 229, 0.2);
   }
 
   .hero::before {
@@ -505,12 +510,16 @@
       font-size: 0.9rem;
     }
 
-    .logo-img {
-      height: 35px;
-    }
-
     .hero {
       padding-top: 70px;
+    }
+
+    .main-logo {
+      max-width: 300px;
+    }
+
+    .hero-logo {
+      margin-bottom: 2rem;
     }
 
     .hero-content {
