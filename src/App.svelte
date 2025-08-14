@@ -2,6 +2,22 @@
   import { Code, Users, Zap, Mail, ArrowRight, Monitor, Briefcase } from 'lucide-svelte';
 </script>
 
+<header>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo">
+          <img src="/hedge-dev-logo.png" alt="hedge.dev" class="logo-img" />
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
 <main>
   <!-- Hero Section -->
   <section class="hero">
@@ -116,6 +132,74 @@
     padding: 0 2rem;
   }
 
+  /* Navigation */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(55, 65, 81, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .logo-img:hover {
+    transform: scale(1.05);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .nav-links a:hover {
+    color: #4f46e5;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
   /* Hero Section */
   .hero {
     min-height: 100vh;
@@ -124,6 +208,7 @@
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
     position: relative;
     overflow: hidden;
+    padding-top: 80px;
   }
 
   .hero::before {
@@ -412,6 +497,22 @@
 
   /* Responsive Design */
   @media (max-width: 768px) {
+    .nav-links {
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+    }
+
+    .logo-img {
+      height: 35px;
+    }
+
+    .hero {
+      padding-top: 70px;
+    }
+
     .hero-content {
       grid-template-columns: 1fr;
       gap: 3rem;
